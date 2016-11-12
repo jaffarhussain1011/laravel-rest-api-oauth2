@@ -7,6 +7,7 @@ This is initial structure for rest api having token authentication using laravel
 * Mbstring PHP Extension
 * Tokenizer PHP Extension
 * XML PHP Extension
+
 ## Setup/Configurations
 * Clone this repo
 * Adjust permissions
