@@ -1,0 +1,125 @@
+{
+	"id": "b3bec477-4152-a577-a521-519e38e1d6dd",
+	"name": "api.dev/oauth/token",
+	"description": "",
+	"order": [
+		"952fe03d-de59-8fe9-232f-afc4aef76779",
+		"794d0dfd-c97f-269c-a224-e1f8b7578acb"
+	],
+	"folders": [],
+	"timestamp": 1478934663461,
+	"owner": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "794d0dfd-c97f-269c-a224-e1f8b7578acb",
+			"headers": "Accept: application/json\nAuthorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImNkODA3YWM3YWUzZThiNWFkMjQ1NzdiMTYzZGZmNjQ3MzQ0MWIyMTU2OWNiMjcyODM4ZDc5ZGJmOTMyMDVhNjM1ZWI2Y2ZjNmQxMGU3ZDM0In0.eyJhdWQiOiI0IiwianRpIjoiY2Q4MDdhYzdhZTNlOGI1YWQyNDU3N2IxNjNkZmY2NDczNDQxYjIxNTY5Y2IyNzI4MzhkNzlkYmY5MzIwNWE2MzVlYjZjZmM2ZDEwZTdkMzQiLCJpYXQiOjE0Nzg5MzgzOTUsIm5iZiI6MTQ3ODkzODM5NSwiZXhwIjo0NjM0NjExOTk1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.IyKG6L2NlJMs0Llva-nXZvHBJDTm9nYAN2TlaU1zL49dH0cW6N9erUOvfsdRax7k9_pU5EdrMYalVg5OQrikzt6sRqBZbZkBmXb48wC3qyGynymKG8vwt5ddaxHC1XK4w-MZni58KrQsmYCBDDIaipVurhKSmzd0gx4UqFsI-3KZrdlaBsllQcQGr5hk-Sl_dChZ0UFaxYPKXKq8Q97hqFByeDgPVURV9eETnZv-VdoKJan8RzlJzgZCBfngz91WwB92lmh5ImzUxAJbkr2yIIUl8T_CNp977pjRxf3HG2pshux8H8NAdVacbGUr-MAZ4JRmYYZ1Jb6H-2qDsolW9qtl1G5woy-IG01EuIajab4L5PduhL5prYxdUfaMRva1II93O7L0-iv_i51X0QtNZuoHfxAsBi0-bBnqgjqjwRHPnjjXAzjBAuruIXFVYYHN9pZwW5WLEXTg5qCPiX_Zyowvo1KTEluxGmWlJs_cJhsWv0pxmuHb5mLlVjyDtHhDOHkgVYsY0mhB0uLK1QnTQ4u6YB-waGTNKIy34nmuAQiDnxxdaRiNxHlLmRfIEYlYxwXTzVUQtHME3LqEtR-Ro1B8DMU9JOLn4t9ywrnSrPGE_7TvNNQYkI59-Po-9HF5YUw5hSZ01YxY54KX9x1mTh23yXLu-vRAuAD6C9uAscg\n",
+			"url": "api.dev/api/user",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "4",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "WJ6bixk1RxHOLOSlkkkSDxHsEcHkFMVkX57V90Bj",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "admin@api.dev",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "scope",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478938484888,
+			"name": "api.dev/api/user",
+			"description": "",
+			"collectionId": "b3bec477-4152-a577-a521-519e38e1d6dd",
+			"responses": []
+		},
+		{
+			"id": "952fe03d-de59-8fe9-232f-afc4aef76779",
+			"headers": "//Content-Type: application/x-www-form-urlencoded\n",
+			"url": "api.dev/oauth/token",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "4",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "WJ6bixk1RxHOLOSlkkkSDxHsEcHkFMVkX57V90Bj",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "admin@api.dev",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "scope",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478937784859,
+			"name": "api.dev/oauth/token",
+			"description": "",
+			"collectionId": "b3bec477-4152-a577-a521-519e38e1d6dd",
+			"responses": []
+		}
+	]
+}
