@@ -22,8 +22,8 @@ This is initial structure for rest api having token authentication using laravel
 > * note down your client id and client secret
 
 ## Test and Verify
-* Open application in browser i.e http://localhost/yourProjectDir/ or if you have created virtual host like api.dev then open http://api.dev
-* Click on register and add new user to system
+* Open application in browser i.e http://localhost/yourProjectDir/ or if you have created virtual host like api.dev then open http://api.dev/register
+* Add new user to system
 * Now test that client and api is working or not
 * * You can use any rest api client but here we are using [postman](https://www.getpostman.com/). Just import [postman.json](https://github.com/jaffarhussain1011/laravel-rest-api-oauth2/edit/master/postman.json), click on left side to expand requsts and then click on token request . adjust request url,client_id,client_secret,username,password and press send button it should give status 200 with access and refresh tokens.
 Note down your access token 
