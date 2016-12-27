@@ -7,3 +7,4 @@ Homestead.yaml
 .env
 composer.lock
 /storage/*
+/resources/angular/node_modules

@@ -13,7 +13,10 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+            Commands\AddRole::class,
+            Commands\DeleteRole::class,
+            Commands\AssignRole::class,
+            Commands\UnassignRole::class
     ];
 
     /**
