@@ -1,10 +1,10 @@
-import { TestapiPage } from './app.po';
+import { Ng2AdminLtePage } from './app.po';
 
-describe('testapi App', function() {
-  let page: TestapiPage;
+describe('ng2-admin-lte App', function() {
+  let page: Ng2AdminLtePage;
 
   beforeEach(() => {
-    page = new TestapiPage();
+    page = new Ng2AdminLtePage();
   });
 
   it('should display message saying app works', () => {

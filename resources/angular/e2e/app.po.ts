@@ -1,6 +1,6 @@
-import { browser, element, by } from 'protractor';
+import { browser, element, by } from 'protractor/globals';
 
-export class TestapiPage {
+export class Ng2AdminLtePage {
   navigateTo() {
     return browser.get('/');
   }
