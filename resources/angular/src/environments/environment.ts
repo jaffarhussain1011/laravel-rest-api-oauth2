@@ -16,6 +16,13 @@ export const environment = {
     messagingSenderId: '201342590340',
     storageBucket: 'ng2-admin-lte-a3958.appspot.com'
   },
+  api:{
+    grantType: 'password',
+    clientID: 3,
+    clientSecret:'GeB7h2QHrwn4EgA1VSVENloYEFZNcNTJ2AaMFVF1',
+    scope: '',
+    domain: 'http://testapi.dev/api' 
+  },
   production: false,
   silent: false
 };

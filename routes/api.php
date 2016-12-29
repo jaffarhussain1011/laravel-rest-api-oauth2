@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Http\Request;
+use Laravel\Passport\Passport;
+
 
 /*
-|--------------------------------------------------------------------------
+-------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
 |
@@ -13,6 +15,16 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+
+Route::group(['middleware' => 'cors'], function() {
+	
+	// 	
+	Route::post('user/token', '\Laravel\Passport\Http\Controllers\AccessTokenController@issueToken');
+	Route::get('/user', function (Request $request) {
+		return $request->user();
+	}
+	)->middleware('auth:api');
+	
+}
+);
+

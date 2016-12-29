@@ -5,6 +5,7 @@ export class User {
     public avatarUrl: string;
     public creationDate: string;
     public preferredLang: string;
+    public password:string;
 
     public constructor( data: any = {}) {
         this.firstname = data.firstname || '';
