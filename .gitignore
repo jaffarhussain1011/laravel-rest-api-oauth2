@@ -8,3 +8,4 @@ Homestead.yaml
 composer.lock
 /storage/*
 /resources/angular/node_modules
+/nbproject/private/

@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+    this.renderer.setElementClass(document.body, 'skin-blue', false);
+    this.renderer.setElementClass(document.body, 'sidebar-mini', false);
     this.renderer.setElementClass(document.body, 'login-page', true);
     this.loginForm = this.formBuilder.group({
       email: ['jaffar.techsupportone@nxvt.com', CustomValidators.email],

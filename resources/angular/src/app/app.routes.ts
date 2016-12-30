@@ -7,14 +7,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { PageNumComponent } from './pages/page-num/page-num.component';
 import { ClientComponent } from './pages/client/client.component';
 import { LoginComponent } from './pages/login/login.component';
-import {SiteComponent as SiteLayout} from './layouts/site/site.component';
 
 const routes: Routes = [
   // Root
-  /*
+  
   {
     component: HomeComponent,
-    path: ''
+    path: '',
+     canActivate: [CanActivateGuard],
   },
   {
     canActivate: [CanActivateGuard],
@@ -30,15 +30,17 @@ const routes: Routes = [
     component: LoginComponent,
     path: 'login',
   }
-  */
+  
+  /*
   { path: 'login', component: LoginComponent },
   { path: '', component: SiteLayout,
     children: [
-      { path: 'home', component: HomeComponent },
-      { path: 'client', component: ClientComponent },
-      { path: 'page/:id', component: PageNumComponent }
+      { path: 'home', component: HomeComponent ,canActivate: [CanActivateGuard],},
+      { path: 'client', component: ClientComponent ,canActivate: [CanActivateGuard],},
+      { path: 'page/:id', component: PageNumComponent ,canActivate: [CanActivateGuard],}
     ]
   }
+  */
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

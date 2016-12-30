@@ -6,7 +6,7 @@ import { HttpModule, Http } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AlertModule, DatepickerModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
-import { ToasterModule } from 'angular2-toaster/angular2-toaster';
+// import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 import { environment } from '../environments/environment';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 
@@ -28,7 +28,7 @@ let modules = [
         provide: TranslateLoader,
         useFactory: (createTranslateLoader)
     }),
-    ToasterModule
+    // ToasterModule
 ];
 
 import { AppComponent } from './app.component';
@@ -36,10 +36,10 @@ import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './widgets/app-header';
 import { AppFooterComponent } from './widgets/app-footer';
 import { MenuAsideComponent } from './widgets/menu-aside';
-import { MessagesBoxComponent } from './widgets/messages-box';
-import { NotificationBoxComponent } from './widgets/notification-box';
-import { TasksBoxComponent } from './widgets/tasks-box';
-import { UserBoxComponent } from './widgets/user-box';
+// import { MessagesBoxComponent } from './widgets/messages-box';
+// import { NotificationBoxComponent } from './widgets/notification-box';
+// import { TasksBoxComponent } from './widgets/tasks-box';
+// import { UserBoxComponent } from './widgets/user-box';
 import { BreadcrumbComponent } from './widgets/breadcrumb';
 
 let widgets = [
@@ -48,10 +48,10 @@ let widgets = [
     AppHeaderComponent,
     AppFooterComponent,
     MenuAsideComponent,
-    MessagesBoxComponent,
-    NotificationBoxComponent,
-    TasksBoxComponent,
-    UserBoxComponent
+    // MessagesBoxComponent,
+    // NotificationBoxComponent,
+    // TasksBoxComponent,
+    // UserBoxComponent
 ];
 
 import { UserService } from './services/user.service';
@@ -87,16 +87,16 @@ let pages = [
 // main bootstrap
 import { routing } from './app.routes';
 import { LoginComponent } from './pages/login/login.component';
-import { SiteComponent as SiteLayout} from './layouts/site/site.component';
+import { LayoutComponent } from './layout/layout.component';
 
 
 @NgModule({
-    bootstrap: [AppComponent],
+    bootstrap: [LayoutComponent],
     declarations: [
         ...widgets,
         ...pages,
         LoginComponent,
-        SiteLayout
+        LayoutComponent
     ],
     imports: [
         ...modules,

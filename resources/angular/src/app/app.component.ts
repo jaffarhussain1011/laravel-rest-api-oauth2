@@ -4,31 +4,33 @@ import { UserService } from './services/user.service';
 import { LoggerService } from './services/logger.service';
 import { Message } from './models/message';
 import { MessagesService } from './services/messages.service';
-import { ToasterService, ToasterConfig } from 'angular2-toaster/angular2-toaster';
+// import { ToasterService, ToasterConfig } from 'angular2-toaster/angular2-toaster';
 import { AdminLTETranslateService } from './services/translate.service';
-
+import { AuthService } from './services/auth.service';
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html'
-    // styleUrls: ['./app.component.css']
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
     private title = 'app works!';
-    private toastrConfig: ToasterConfig;
+    // private toastrConfig: ToasterConfig;
     private logger: LoggerService;
 
     constructor(private userServ: UserService, private msgServ: MessagesService,
-        private toastr: ToasterService, private translate: AdminLTETranslateService) {
-        this.toastrConfig = new ToasterConfig({
-            newestOnTop: true,
-            showCloseButton: true,
-            tapToDismiss: false
-        });
+        // private toastr: ToasterService, 
+        private translate: AdminLTETranslateService,private auth:AuthService) {
+        // this.toastrConfig = new ToasterConfig({
+        //     newestOnTop: true,
+        //     showCloseButton: true,
+        //     tapToDismiss: false
+        // });
         // this.translate = translate.getTranslate();
         // this.logger = new LoggerService( this.translate );
     }
 
     public ngOnInit() {
+        
         //  sedding the resize event, for AdminLTE to place the height
         let ie = this.detectIE();
         if (!ie) {
@@ -41,27 +43,27 @@ export class AppComponent implements OnInit {
         }
 
         // defining some test users
-        let user1 = new User({
-            avatarUrl: 'public/assets/img/user2-160x160.jpg',
-            email: 'weber.antoine.pro@gmail.com',
-            firstname: 'WEBER',
-            lastname: 'Antoine'
-        });
-        let user2 = new User({
-            avatarUrl: 'public/assets/img/user2-160x160.jpg',
-            email: 'EMAIL',
-            firstname: 'FIRSTNAME',
-            lastname: 'LASTNAME'
-        });
-        this.userServ.setCurrentUser(user1);
+        // let user1 = new User({
+        //     avatarUrl: 'public/assets/img/user2-160x160.jpg',
+        //     email: 'weber.antoine.pro@gmail.com',
+        //     firstname: 'WEBER',
+        //     lastname: 'Antoine'
+        // });
+        // let user2 = new User({
+        //     avatarUrl: 'public/assets/img/user2-160x160.jpg',
+        //     email: 'EMAIL',
+        //     firstname: 'FIRSTNAME',
+        //     lastname: 'LASTNAME'
+        // });
+        // this.userServ.setCurrentUser(user1);
 
-        // sending a test message
-        this.msgServ.addMessage(new Message({
-            author: user2,
-            content: 'le contenu d\'un message d\'une importance extreme',
-            destination: user1,
-            title: 'un message super important'
-        }));
+        // // sending a test message
+        // this.msgServ.addMessage(new Message({
+        //     author: user2,
+        //     content: 'le contenu d\'un message d\'une importance extreme',
+        //     destination: user1,
+        //     title: 'un message super important'
+        // }));
     }
 
     protected detectIE(): any {

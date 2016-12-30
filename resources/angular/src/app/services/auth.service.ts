@@ -6,14 +6,17 @@ let auth0Lock = require('auth0-lock').default;
 import { environment } from '../../environments/environment';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
   public token: string;
-  constructor(private http: Http) {
+  public profile:any;
+  constructor(private http: Http,private router: Router) {
     // set token if saved in local storage
     var currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.token = currentUser && currentUser.token;
+    this.profile = (currentUser && currentUser.username)?{email: currentUser.username}:{};
   }
 
   login(username: string, password: string): Observable<boolean> {
@@ -30,14 +33,14 @@ export class AuthService {
     return this.http.post(environment.api.domain + '/user/token', body,options).
       map((response: Response) => {
         // login successful if there's a jwt token in the response
-        let token = response.json() && response.json().token;
+        let token = response.json() && response.json().access_token;
         if (token) {
           // set token property
           this.token = token;
 
           // store username and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));
-
+          
           // return true to indicate successful login
           return true;
         } else {
@@ -52,10 +55,33 @@ export class AuthService {
     // clear token remove user from local storage to log user out
     this.token = null;
     localStorage.removeItem('currentUser');
+    //  this.router.navigate(['login']);
   }
   public isAuthenticated = (): boolean => {
     return localStorage.getItem('currentUser') ? true : false;
     // return tokenNotExpired();
+  }
+  public showLogin(): void{
+      this.router.navigate(['login']);
+  }
+  public getUserEmail = (): string => {
+    return this.profile ? this.profile.email : '';
+  }
+
+  public getUserPicture = (): string => {
+    return this.profile ? this.profile.picture : '';
+  }
+
+  public getUserName = (): string => {
+    if (this.profile) {
+      if (this.profile.user_metadata) {
+        return this.profile.user_metadata.name;
+      }
+
+      return this.profile.name || this.profile.email;
+    }
+
+    return '';
   }
   /*
   private lock: Auth0LockStatic;

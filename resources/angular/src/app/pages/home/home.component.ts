@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BreadcrumbService } from '../../services/breadcrumb.service';
-
+import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-home',
   styleUrls: ['./home.component.css'],
@@ -9,11 +9,14 @@ import { BreadcrumbService } from '../../services/breadcrumb.service';
 export class HomeComponent implements OnInit, OnDestroy {
   public date: Date = new Date();
 
-  constructor(private breadServ: BreadcrumbService) {
+  constructor(private breadServ: BreadcrumbService,private auth: AuthService) {
     // TODO
   }
 
   public ngOnInit() {
+    if(!this.auth.isAuthenticated()){
+      this.auth.showLogin();
+    }
     // setttings the header for the home
     this.breadServ.set({
       description: 'HomePage',
